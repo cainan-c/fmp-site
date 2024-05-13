@@ -23,7 +23,8 @@
   </div>
   <div class="content">
     <div class="tab-content active" id="tab0">
-    Home
+      <h1 style="text-align: center;">Taiko no Tatsujin: Breaking the Barrier</h1>  
+      <p style="text-align: center;">How I pushed a game's small limits to the extreme!</p>
     </div>
     <div class="tab-content" id="tab1">
     Proposal
@@ -32,7 +33,75 @@
     Research
     </div>
     <div class="tab-content" id="tab3">
-    Development
+      <p> </p>
+      <h1 style="text-align: center;">Development</h1>
+      <h2>What is Taiko no Tatsujin?</h3>
+      <p>Before going any further, I should explain what exactly we're working with here. To make it easier to understand further along.</p>
+      <p>This project centers around modding a rhythm game series called "Taiko no Tatsujin". A Japanese rhythm game featuring gameplay around hitting drums to the beat of the music.</p>
+      <p>While it's rather niche internationally, recieving only a few international releases. It is an incredibly popular title in it's home country of Japan.</p>
+      <p>This is a series that, because of it's incredibly easy to pick up but hard to master gameplay, it's a title that is not only popular with it's younger target demographic, but people of all ages too!</p>
+      <p>Taiko no Tatsujin is notable for it's note types too. Unlike a lot of other rhythm games that typically like to focus on a 4 Key type of game play (DDR, StepMania, Project DIVA, etc.),</p>
+      <p>Taiko only has 2 main note types. A red note, symbolising a "Don" sound, and a blue note, symbolising a "Ka" sound. Despite this, however, the game has a lot of rather complicated note patterns,</p>
+      <p>which it's colourful demaner wouldn't lead you to believe.</p>    
+      <p> </p>
+      <p> </p>
+      <p>Here are some images and gameplay examples of the game we're focusing on within this project.</p>
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/f7Yimxud4UI?si=xDt_9Yycc3cdxvAI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <p>The video above is one of the most viewed videos on this game series on YouTube. Showcasing the song "MEGALOVANIA" from the popular 2015 indie title, "UNDERTALE"</p> 
+      <p>This specifically is "Taiko no Tatsujin: Drum 'n'Fun" released for the Nintendo Switch in Japan and Asia on the 19th of July, 2018 and internationally on the 2nd of November, 2018.</p>
+      <h1 style="text-align: center;">Technical Development</h1>
+      <p>The Following, will document my technical development on this project. </p>
+      <p> </p>
+      <p>For starters, what exactly is it, I'm doing. Simply put, this is the more back-ended side of what I've been working on.</p>
+      <p> </p>
+      <p>This entire endeavor all started with what many things do, an idea. One that I decided to explore.</p>
+      <p>I had though, is it possible to create a tool, a tool that could add more songs to my favourite entry in the series using Taiko's vast 20 year history of songs as a source.</p>
+      <p>Surely enough, I was able to do that. And ended up going much further than that as well.</p>
+      <p> </p>
+      <h2>File formats and Technical Limitations</h3>
+      <p>So, the main title we'll be focusing on here, will be "Taiko no Tatsujin: Drum Session" released for the Sony PlayStation 4 in Japan and</p> 
+      <p>Asia on the 26th of October 2017 and internationally on the 2nd of November, 2018. And from here on out will simply be referred to as "Taiko PS4"</p>
+      <p> </p>
+      <h3>"fumen" chart files.</h3>
+      <p>Fumen refers to the file format that Bandai Namco uses for their charts, this is a proprietary format, and is suported within all Taiko no Tatsujin games from the past 15 years!</p>
+      <h3>Audio Formats, and such.</h3>
+      <p>We'll be dealing with several audio formats here too, mainly for conversion.</p>
+      <p>"nus3bank" refers to Bandai Namco's custom audio container for their games, these contain information such as the song's preview position in miliseconds, the file size of the audio format it uses, and the song name itself.</p>
+      <p>I had created a tool specifically to convert standard audio such as "mp3", "flac" or "wav" to this format, more information on that in a bit as that project created slightly earlier in the month is going to be integrated into this one, as a rather crucial keystone for this whole operation to function.</p>
+      <p>Other bits of audio information include the audio format the PlayStation 4 supports, in this case ATTRAC9, ".at9", which is a Adaptive Transform Acoustic Coding, is a proprietary audio encoding format created by Sony themselves.</p>
+      <p>Since the game we'll be focusing on is on a Sony console, the PlayStation 4, this is the audio format we'll be using along side the "nus3bank" contianer.</p>
+      <p> </p>
+      <p>Along with other modern Taiko entries, PS4 uses JSON files to store important information for the game.</p>
+      <h3>But, what is a JSON file?</h3>
+      <p>JSON (JavaScript Object Notation) is a lightweight data interchange format commonly used for transmitting data between a server and a client. It's human-readable and straightforward for machines to parse. JSON is structured as key-value pairs enclosed in curly braces {}. Keys are strings followed by a colon : and corresponding values. Values can be strings, numbers, booleans, arrays, objects, or null. For instance, a JSON snippet representing a person might look like this:</p>
+      <img src="assets/jsonexample.png" style="width: 25vw; min-width: 100px;" />
+      <p>In this example, "name" is a string key with the value "John Doe", "age" is a number key with the value 35, "isStudent" is a boolean key with the value false, "grades" is an array key with a list of numbers [85, 90, 88], "address" is an object key with nested key-value pairs defining an address, and "middleName" is a key with a null value. JSON is widely used in web development for APIs and data exchange due to its simplicity and compatibility across programming languages. To embed JSON data in an HTML document, you can use JavaScript to fetch JSON from a server or include it directly within a "<\script>" tag for processing and rendering dynamic content on web pages.</p>
+      <h3>Taiko's "datatable" files.</h3>
+      <p>Taiko PS4 stores all of it's json files in a little folder called "datatable". The two in particular we will be focusing on are "musicinfo" and "wordlist"</p>
+      <p>The datatable file "musicinfo" stores specifically song data, including it'd uniqueId, which is an integer used namemly for things like score saving and such.</p>
+      <p>Along with "starEasy", "starNormal", "starHard", "starMania", etc. which contain information on the song's difficulty level. Or things as simple as "id", which is just a 3-6 character string which every song in the game has, usually it's linked to the song name itself. For example, the Game Music song, MEGALOVANIA has an id which is "udtmgl". "udt" being shorthand for UNDERTALE, the game series in-which the song originates from, and "mgl" which is derrived from the song name itself, "MEGALOVANIA".</p>
+      <p>There's also "wordlist", which, quite literally, holds the strings for every single text based item in the game. From UI text, to song names, it has it all, and in several languages too.
+      <h3>Technical Limitations</h3>
+      <p>Taiko PS4, unfortunately, has not one but two pretty significant limitations.</p>
+      <p>The biggest, is it's "UniqueId" limit, the game, does not, allow for songs to go past 399. Meaning in layman's terms, you can't have more than 400 songs. (0 to 399). However, this is something we will be getting into later.</p>
+      <p>And the other, each "datatable" file cannot be larger than 2.00 MB, why this is, who's to say. Our assumption is it's an arbitrary limitation set by NAMCO, because, who's going to try and add more songs?</p>
+      <p>Luckily, at least, this one can be gotten around, "minifying" a JSON, which is essentially just the process of compressing it down to one line instead of "looking nice" at the cost of making it a lot harder to read, has the benefit of usually cutting down our limited file-size in half.</p>  
+      <h2>The Fun begins</h3>
+      <p>At first, as a rough draft, over 10 days ago, I created this:</p>
+      <img src="assets/image1.png" style="width: 55vw; min-width: 330px;" />
+      <p>You'd be wondering, what exactly is this? Well before I wanted to fully commit to this, I wanted to know, can I at least parse the information I needed through a Python GUI.</p>
+      <p>Ultimately, the answer to that, was, yes. What you see here, is an incredibly barebones program I put together, right now, all it does is read two files. "wordlist.json" and "musicinfo.json".</p>
+      <p>Why such a basic test at first? Well, no JSON file is the same, and I had to see if I could read the data I needed in-line with how the game expects them formatted. And thankfully! I was able to.</p>
+      <p>Then, the prototyping began, expanding from that very simple test, I started to add elements that showed me more information.</p>
+      <img src="assets/image2.png" style="width: 55vw; min-width: 330px;" />
+      <p>What's shown here is an extension of that initial very simple test, however now it shows more information.</p>
+      <p>Instead of just showing the Song Title, UniqueId and Genre, it now displays more information, including the Subtitle (if the song has one) or it's star rating (in order from Easy to Extreme).</p>
+      <p>From there, however we were off to the races, more development took place on this GUI I was making, a tool to assist me in adding more songs over to this game.</p>
+      <p>While there's no functionality yet, this was where my program began to take shape, where the idea for it to be able to export songs happened.</p>
+      <img src="assets/image3.png" style="width: 55vw; min-width: 330px;" />
+      <p>And within less than an hour, things were starting to fall in place, having figured out how to actually order the GUI in a way I was actually happy with, as well. Not only that, verifying if the information being read, was correct.</p>
+      <img src="assets/image4.png" style="width: 55vw; min-width: 330px;" />  
+      <p>In the back, here, you can see the very beginning of our exporting tool in action. However, it was very very far from being done. As there's a lot more to adding files to this game then just modifying a few json files.</p>    
     </div>
     <div class="tab-content" id="tab4">
     Production

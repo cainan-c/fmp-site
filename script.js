@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
   const tabs = document.querySelectorAll('.tabs li');
   const tabContents = document.querySelectorAll('.tab-content');
-
+  
   tabs.forEach((tab, index) => {
     tab.addEventListener('click', function() {
       // Remove 'active' class from all tabs and tab contents

@@ -25,6 +25,7 @@
     <div class="tab-content active" id="tab0">
       <h1 style="text-align: center;">Taiko no Tatsujin: Breaking the Barrier</h1>  
       <p style="text-align: center;">How I pushed a game's small limits to the extreme!</p>
+      <p style="text-align: center;">This Website has been written from scratch, the source code for it can be found <a href="https://github.com/cainan-c/fmp-site">here</a>.</p>      
     </div>
     <div class="tab-content" id="tab1">
     Proposal
@@ -157,9 +158,50 @@
     Evaluation
     </div>     
     <div class="tab-content" id="tab6">
-    Weeky Log
-    </div>           
-  </div>
+    <h1>Weeky Log</h1>
+    <h2>May 5th to May 6th - Initial Pre-programming, creating tools that'll be required for the project.</h2>
+      <p>Creating a tool that will create required audio files for the game itself.</p>
+      <img src="assets/image6.png" style="width: 55vw; min-width: 330px;" />
+      <p>Reverse engineering Namco's "bnsf" audio header for use with the Polycom Siren 14 audio codec.</p>
+      <p>Polycom Siren 14 is an audio codec often used with VoIP services, for some reason, some of their games use it.</p>
+      <p>Output files are a raw audio stream, which then need to be integrated into this header of there's which specify a few things. (Audio size, File size+Header, Sample Rate (e.g 48000Hz), etc.)</p>
+      <video style="width: 55vw; min-width: 330px;" controls>
+        <source src="assets/video1.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video> 
+      <img src="assets/image7.png" style="width: 55vw; min-width: 330px;" />      
+      <img src="assets/image8.png" style="width: 55vw; min-width: 330px;" />          
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">well, today was rather productive. turned my basic nus3bank tool for taiko games into something that actually does the entire process (not just the final bit).<br><br>though, it&#39;s annoying that there&#39;s literally no information on one of the game&#39;s audio formats. polycom siren 22/g.719 <a href="https://t.co/FShB91OpAQ">pic.twitter.com/FShB91OpAQ</a></p>&mdash; cainan (@cainan__c) <a href="https://twitter.com/cainan__c/status/1787278629254148360?ref_src=twsrc%5Etfw">May 6, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+      <p>The source code for this project can be found on my <a href="https://github.com/cainan-c/TaikoPythonTools/tree/main/TaikoNus3bankMake">GitHub</a>.</p>
+    <h2>May 6th - Initial Development and Prototyping.</h2>
+      <img src="assets/image11.png" style="width: 55vw; min-width: 330px;" />  
+      <img src="assets/image12.png" style="width: 55vw; min-width: 330px;" />  
+      <img src="assets/image13.png" style="width: 55vw; min-width: 330px;" />  
+      <img src="assets/image14.png" style="width: 55vw; min-width: 330px;" />  
+      <img src="assets/image15.png" style="width: 55vw; min-width: 330px;" />  
+      <p>Today was where the work began, carrying over to the early hours of May 7th.</p>
+    <h2>May 7th - Initial Testing and improvements.</h2>
+      <img src="assets/image10.png" style="width: 55vw; min-width: 330px;" />         
+      <video style="width: 55vw; min-width: 330px;" controls>
+        <source src="assets/video2.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+      </video>     
+      <img src="assets/image9.png" style="width: 55vw; min-width: 330px;" />     
+        <blockquote class="twitter-tweet" data-media-max-width="560"><p lang="en" dir="ltr">well this was a fun distraction:<br><br>tool that generates custom song lists for taiko ps4/ns1<br>gonna add support for the mobile game pop tap beat too cuz awesome game <a href="https://t.co/GuMr3q1c8G">pic.twitter.com/GuMr3q1c8G</a></p>&mdash; cainan (@cainan__c) <a href="https://twitter.com/cainan__c/status/1787665387464675417?ref_src=twsrc%5Etfw">May 7, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+        <blockquote class="twitter-tweet"><p lang="ca" dir="ltr">gui improvements <a href="https://t.co/TwTYP5E9nx">https://t.co/TwTYP5E9nx</a> <a href="https://t.co/9Vu78Kzgfo">pic.twitter.com/9Vu78Kzgfo</a></p>&mdash; cainan (@cainan__c) <a href="https://twitter.com/cainan__c/status/1787692410224423103?ref_src=twsrc%5Etfw">May 7, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+    <h2>May 7th - General Reflection on Progress so far, identifying issues.</h2>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">honestly im impressed i went from something that quite literally did nothing (left) to a tool that can port songs over to 2 different taiko games in the span of 7 hours (right)<br><br>there&#39;s still work to do. namely fixing audio output. and adding some missing songs.. <a href="https://t.co/WOsrRK8a4D">https://t.co/WOsrRK8a4D</a> <a href="https://t.co/KpVYPZ3rkA">pic.twitter.com/KpVYPZ3rkA</a></p>&mdash; cainan (@cainan__c) <a href="https://twitter.com/cainan__c/status/1787728548230238234?ref_src=twsrc%5Etfw">May 7, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> 
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">that and nijiiro + ps4 songs are slightly out of sync. <br>which is majorly annoying because that&#39;s around 1000 of the 2000 songs</p>&mdash; cainan (@cainan__c) <a href="https://twitter.com/cainan__c/status/1787978463082594812?ref_src=twsrc%5Etfw">May 7, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+      <blockquote class="twitter-tweet"><p lang="en" dir="ltr">well here&#39;s the current to do list for this shit anyways <a href="https://t.co/rcz8JFCLQW">pic.twitter.com/rcz8JFCLQW</a></p>&mdash; cainan (@cainan__c) <a href="https://twitter.com/cainan__c/status/1787981110313406498?ref_src=twsrc%5Etfw">May 7, 2024</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>           
+      <iframe id="video8" width="560" height="315" src="https://www.youtube.com/embed/7PXkoqlxSt0?si=6VdedLGLl5AqJYet" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      <h2>May 8th</h2>
+        <p></p>
+      <h2>May 9th</h2>
+        <p></p>
+      <h2>May 10th</h2>   
+        <p></p>   
+    </div>
+    </div>     
   <script src="script.js"></script>
 </body>
 </html>

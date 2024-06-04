@@ -1,11 +1,13 @@
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Roboto';font-size: 18px;
+  background-color: #2b2b2b; 
+  color: #fff;
 }
 
 .sidebar {
   width: 200px;
-  background-color: #333;
+  background-color: #1e1e1e;
   color: #fff;
   height: 100vh;
   position: fixed;
@@ -15,7 +17,7 @@ body {
   padding: 10px;
   text-align: center;
   font-weight: bold;
-  background-color: #222;
+  background-color: #1d1d1d;
 }
 
 .tabs {
@@ -51,3 +53,4 @@ body {
 .tab-content.active {
   display: block;
 }
+
